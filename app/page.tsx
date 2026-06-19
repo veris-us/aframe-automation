@@ -54,12 +54,12 @@ export default function Home() {
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1f6f8b]/10 blur-3xl" />
         <div className="absolute -bottom-24 left-20 h-72 w-72 rounded-full bg-[#c9bda9]/30 blur-3xl" />
 
-        <div className="relative z-10">
+        <div className="relative z-10 md:pr-6">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#1f6f8b]">
             Custom Software • Business Automation • Real Results
           </p>
 
-          <h2 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight md:text-6xl">
+          <h2 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-6xl">
             Custom Software Built
             <br />
             For The Way Your
