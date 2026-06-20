@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A Frame Automation",
-  description: "Enterprise Software Solutions",
+  title: "A Frame Automation | Enterprise Software Solutions",
+  description:
+    "Custom software, business automation, client portals, and SaaS platforms built around your workflow.",
 };
 
 export default function RootLayout({
