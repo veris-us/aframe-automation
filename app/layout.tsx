@@ -15,20 +15,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "A Frame Automation | Enterprise Software Solutions",
   description:
-    "Custom software, business automation, client portals, and SaaS platforms built around your workflow.",
-};
+    "Custom software, business automation, client portals, websites, and SaaS platforms built around the way your business actually works.",
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
-}
+  keywords: [
+    "Custom Software",
+    "Business Automation",
+    "SaaS Development",
+    "Client Portals",
+    "Enterprise Software",
+    "Software Development Oklahoma",
+    "A Frame Automation",
+  ],
+
+  authors: [{ name: "A Frame Automation" }],
+
+  openGraph: {
+    title: "A Frame Automation",
+    description:
+      "Custom software, business automation, websites, and SaaS platforms.",
+    siteName: "A Frame Automation",
+    type: "website",
+  },
+};
