@@ -40,10 +40,12 @@ export default function Home() {
               Contact
             </a>
             <a
-              href="#contact"
+              href="https://calendly.com/gage-mcdonald-veris-us/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-[#1f6f8b] px-5 py-2 font-semibold text-white hover:bg-[#195a70]"
             >
-              Start a Project
+              Book a Consultation
             </a>
           </nav>
         </div>
@@ -76,10 +78,12 @@ export default function Home() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#contact"
-              className="rounded-full bg-[#1f6f8b] px-7 py-3 text-center font-semibold text-white shadow-sm hover:bg-[#195a70]"
+              href="https://calendly.com/gage-mcdonald-veris-us/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-[#1f6f8b] px-5 py-2 font-semibold text-white hover:bg-[#195a70]"
             >
-              Request a Consultation
+              Book a Consultation
             </a>
 
             <a
@@ -486,6 +490,17 @@ export default function Home() {
               you would like improved. We’ll review it and follow up with next
               steps.
             </p>
+          </div>
+
+          <div className="mt-8">
+            <a
+              href="https://calendly.com/gage-mcdonald-veris-us/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full border border-[#9fc9d8] px-6 py-3 font-semibold text-white hover:bg-white/10"
+            >
+              Prefer to Talk? Book a Consultation →
+            </a>
           </div>
 
           <form className="rounded-2xl bg-white p-8 text-[#1f2528] shadow-xl">
