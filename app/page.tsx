@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const calendlyLink = "https://calendly.com/gage-mcdonald-veris-us/30min";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-[#1f2528]">
@@ -40,7 +42,7 @@ export default function Home() {
               Contact
             </a>
             <a
-              href="https://calendly.com/gage-mcdonald-veris-us/30min"
+              href={calendlyLink}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-[#1f6f8b] px-5 py-2 font-semibold text-white hover:bg-[#195a70]"
@@ -78,10 +80,10 @@ export default function Home() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="https://calendly.com/gage-mcdonald-veris-us/30min"
+              href={calendlyLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#1f6f8b] px-5 py-2 font-semibold text-white hover:bg-[#195a70]"
+              className="rounded-full bg-[#1f6f8b] px-7 py-3 text-center font-semibold text-white shadow-sm hover:bg-[#195a70]"
             >
               Book a Consultation
             </a>
@@ -98,7 +100,7 @@ export default function Home() {
         <div className="relative z-10 overflow-hidden rounded-[2rem] border border-[#ded4c3] bg-white shadow-xl">
           <Image
             src="/veris-on-screen.png"
-            alt="Veris dashboard screenshot"
+            alt="Veris dashboard on office computer screen"
             width={1200}
             height={800}
             priority
@@ -371,6 +373,28 @@ export default function Home() {
               <h3 className="mt-5 text-2xl font-bold">{project.title}</h3>
               <p className="mt-4 leading-7 text-[#5f6b70]">{project.text}</p>
 
+              {project.title === "Veris" && (
+                <div className="mt-4 rounded-xl bg-green-50 p-4">
+                  <div className="font-semibold text-green-700">
+                    Current Status: Live Demonstration
+                  </div>
+                  <div className="mt-2 text-sm text-green-700">
+                    Manufacturing • Education • Government
+                  </div>
+                </div>
+              )}
+
+              {project.title === "Certus" && (
+                <div className="mt-4 rounded-xl bg-blue-50 p-4">
+                  <div className="font-semibold text-blue-700">
+                    Current Status: Active Development
+                  </div>
+                  <div className="mt-2 text-sm text-blue-700">
+                    Scholarships • Grants • Funding Navigation
+                  </div>
+                </div>
+              )}
+
               <div className="mt-6 grid gap-2">
                 {project.items.map((item) => (
                   <div key={item} className="text-sm font-medium text-[#3f4a4f]">
@@ -421,6 +445,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section className="bg-[#1f2528] py-20 text-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#9fc9d8]">
+              Founder
+            </p>
+
+            <h2 className="mt-3 text-4xl font-bold">
+              Built by someone who understands operations.
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-[#c7d0d4]">
+              A Frame Automation was founded by Michael McDonald to help
+              businesses replace spreadsheets, paper processes, disconnected
+              software, and manual workflows with systems built around the way
+              they actually operate.
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-[#c7d0d4]">
+              The goal is simple: practical software that solves real business
+              problems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#1f6f8b]">
+            Technology Stack
+          </p>
+
+          <h2 className="mt-3 text-4xl font-bold">
+            Modern technologies powering every solution.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-4">
+            {[
+              "Next.js",
+              "React",
+              "Firebase",
+              "Supabase",
+              "Cloudflare",
+              "Vercel",
+              "AI Integrations",
+              "Automation Workflows",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-[#ded4c3] p-6 text-center font-semibold"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Consultation */}
       <section className="bg-[#f7f4ef] py-20">
         <div className="mx-auto max-w-7xl px-6">
@@ -465,11 +549,27 @@ export default function Home() {
           </div>
 
           <a
-            href="#contact"
+            href={calendlyLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-10 inline-flex rounded-full bg-[#1f6f8b] px-8 py-4 font-semibold text-white hover:bg-[#195a70]"
           >
             Schedule a Free Consultation
           </a>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="bg-[#f7f4ef] py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-4xl font-bold">
+            Building solutions for businesses across Oklahoma.
+          </h2>
+
+          <p className="mt-6 text-lg text-[#5f6b70]">
+            Currently onboarding pilot customers and developing custom software
+            platforms designed around real business challenges.
+          </p>
         </div>
       </section>
 
@@ -490,40 +590,58 @@ export default function Home() {
               you would like improved. We’ll review it and follow up with next
               steps.
             </p>
+
+            <div className="mt-8">
+              <a
+                href={calendlyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border border-[#9fc9d8] px-6 py-3 font-semibold text-white hover:bg-white/10"
+              >
+                Prefer to Talk? Book a Consultation →
+              </a>
+            </div>
           </div>
 
-          <div className="mt-8">
-            <a
-              href="https://calendly.com/gage-mcdonald-veris-us/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex rounded-full border border-[#9fc9d8] px-6 py-3 font-semibold text-white hover:bg-white/10"
-            >
-              Prefer to Talk? Book a Consultation →
-            </a>
-          </div>
-
-          <form className="rounded-2xl bg-white p-8 text-[#1f2528] shadow-xl">
+          <form
+            action="https://formspree.io/f/mjgqbykd"
+            method="POST"
+            className="rounded-2xl bg-white p-8 text-[#1f2528] shadow-xl"
+          >
             <div className="grid gap-5">
               <input
+                name="name"
                 className="rounded-xl border border-[#ded4c3] p-4"
                 placeholder="Name"
               />
+
               <input
+                name="company"
                 className="rounded-xl border border-[#ded4c3] p-4"
                 placeholder="Business Name"
               />
+
               <input
+                type="email"
+                name="email"
                 className="rounded-xl border border-[#ded4c3] p-4"
                 placeholder="Email"
               />
+
               <input
+                name="phone"
                 className="rounded-xl border border-[#ded4c3] p-4"
                 placeholder="Phone"
               />
 
-              <select className="rounded-xl border border-[#ded4c3] p-4">
-                <option>What are you looking for?</option>
+              <select
+                name="project_type"
+                className="rounded-xl border border-[#ded4c3] p-4"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  What are you looking for?
+                </option>
                 <option>Business Website</option>
                 <option>Business Portal</option>
                 <option>Custom SaaS Platform</option>
@@ -531,8 +649,14 @@ export default function Home() {
                 <option>Not Sure Yet</option>
               </select>
 
-              <select className="rounded-xl border border-[#ded4c3] p-4">
-                <option>Estimated Budget</option>
+              <select
+                name="budget"
+                className="rounded-xl border border-[#ded4c3] p-4"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Estimated Budget
+                </option>
                 <option>Under $2,500</option>
                 <option>$2,500 - $5,000</option>
                 <option>$5,000 - $10,000</option>
@@ -542,16 +666,17 @@ export default function Home() {
               </select>
 
               <textarea
+                name="project_description"
                 className="min-h-36 rounded-xl border border-[#ded4c3] p-4"
                 placeholder="Tell us about your project..."
               />
 
-              <a
-                href="mailto:hello@aframeautomation.com?subject=New Project Request"
+              <button
+                type="submit"
                 className="rounded-full bg-[#1f6f8b] px-8 py-4 text-center font-semibold text-white hover:bg-[#195a70]"
               >
                 Submit Project Request
-              </a>
+              </button>
             </div>
           </form>
         </div>
