@@ -45,6 +45,8 @@ export default function BuilderTopbar() {
         logo_border_radius: content.logo_border_radius,
 
         hero_image_url: content.hero_image_url,
+        hero_media_type: content.hero_media_type,
+        hero_video_url: content.hero_video_url,
         hero_image_height: content.hero_image_height,
         hero_image_zoom: content.hero_image_zoom,
         hero_image_position_x: content.hero_image_position_x,
