@@ -411,26 +411,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <div className="mt-6 rounded-2xl border border-[#ded4c3] bg-white p-6 shadow-sm md:flex md:items-center md:justify-between md:gap-6">
-          <div>
-            <div className="flex items-center gap-3">
-              <h3 className="text-xl font-bold">Certus</h3>
-              <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                IN DEVELOPMENT
-              </span>
-            </div>
-            <p className="mt-2 max-w-3xl leading-7 text-[#5f6b70]">
-              Also in the works: a grant and funding navigation platform that
-              helps students and organizations discover opportunities, evaluate
-              eligibility, track deadlines, and plan applications.
-            </p>
-          </div>
-
-          <div className="mt-4 shrink-0 text-sm font-medium text-[#3f4a4f] md:mt-0">
-            Scholarships • Grants • Funding Navigation
-          </div>
-        </div>
       </section>
 
       {/* Why A Frame */}
