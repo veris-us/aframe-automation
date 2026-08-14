@@ -274,14 +274,25 @@ export default function Home() {
           Software built from real business problems.
         </h2>
 
+        <p className="mt-4 max-w-3xl leading-7 text-[#5f6b70]">
+          Every screen below is a real system we designed and built — a
+          compliance platform, a live contractor operations platform, and a
+          customer-facing website with an owner-managed back end.
+        </p>
+
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             {
               title: "Veris",
               status: "LIVE DEMO",
-              statusColor: "green",
+              tone: "green",
               label: "Compliance & Governance Platform",
+              image: "/Dashboard screenshot.png",
+              alt: "Veris compliance and governance dashboard",
+              caption: "Pictured: Veris governance dashboard",
               text: "A cloud-based platform for policy management, document control, audits, CAPA tracking, governance analytics, and AI-assisted compliance workflows.",
+              statusTitle: "Current Status: Live Demonstration",
+              statusDetail: "Manufacturing • Education • Government",
               items: [
                 "Policy Management",
                 "Audit Reports",
@@ -290,110 +301,105 @@ export default function Home() {
               ],
             },
             {
-              title: "Certus",
-              status: "IN DEVELOPMENT",
-              statusColor: "blue",
-              label: "Grant & Funding Navigation Platform",
-              text: "A funding discovery platform for students and organizations to find opportunities, evaluate eligibility, track deadlines, and plan applications.",
+              title: "Custom Business Platforms",
+              status: "IN PRODUCTION",
+              tone: "blue",
+              label: "Operations Platforms Built To Order",
+              image: "/RPM Snapshot AFrame.png",
+              alt: "RPM Solutions operations dashboard with live KPIs, job board, and executive timeline",
+              caption:
+                "Pictured: RPM Electrical Solutions — live operations platform",
+              text: "Full operating systems for the companies that run on them: live KPI dashboards, jobs and work orders, crew scheduling, purchasing, invoicing, and job costing in one place instead of five disconnected tools.",
+              statusTitle: "Current Status: Live In Production",
+              statusDetail: "Electrical • Construction • Field Services",
               items: [
-                "Funding Discovery",
-                "Eligibility Matching",
-                "Deadline Tracking",
-                "Application Planning",
+                "Live Operations Dashboards",
+                "Jobs, Work Orders & Scheduling",
+                "Purchasing & Job Costing",
+                "Crew & Field Mode Access",
               ],
             },
             {
-              title: "Custom Business Platforms",
-              status: "CUSTOM BUILT",
-              statusColor: "gray",
-              label: "Built Around Your Workflow",
-              text: "Customer portals, employee dashboards, restaurant admin tools, internal dashboards, and automation workflows tailored to real operations.",
+              title: "Custom Business Websites",
+              status: "LIVE SITE",
+              tone: "green",
+              label: "Websites & Online Presence",
+              image: "/Meltdown Snapshot for AFrame.png",
+              alt: "The Meltdown on 259 food truck website homepage",
+              caption:
+                "Pictured: The Meltdown on 259 — Broken Bow & Hochatown, OK",
+              text: "Fast, mobile-first websites with real personality and an admin panel behind them, so owners can update menus, hours, locations, and events themselves without calling a developer.",
+              statusTitle: "Current Status: Live Website",
+              statusDetail: "Restaurants • Food Trucks • Local Service",
               items: [
-                "Customer Portals",
-                "Employee Dashboards",
-                "Workflow Automation",
-                "Business Analytics",
+                "Mobile-First Design",
+                "Owner-Managed Content",
+                "Menus, Hours & Locations",
+                "Maps, Events & Lead Capture",
               ],
             },
           ].map((project) => (
             <div
               key={project.title}
-              className="rounded-2xl border border-[#ded4c3] bg-white p-7 shadow-sm"
+              className="flex flex-col rounded-2xl border border-[#ded4c3] bg-white p-7 shadow-sm"
             >
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex items-start justify-between gap-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#1f6f8b]">
                   {project.label}
                 </p>
 
                 <span
                   className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
-                    project.statusColor === "green"
+                    project.tone === "green"
                       ? "bg-green-100 text-green-700"
-                      : project.statusColor === "blue"
-                        ? "bg-blue-100 text-blue-700"
-                        : "bg-gray-100 text-gray-700"
+                      : "bg-blue-100 text-blue-700"
                   }`}
                 >
                   {project.status}
                 </span>
               </div>
 
-              {project.title === "Veris" ? (
-                <div className="mt-6 overflow-hidden rounded-2xl border border-[#ded4c3] bg-[#f7f4ef] shadow-sm">
-                  <Image
-                    src="/Dashboard screenshot.png"
-                    alt="Veris dashboard screenshot"
-                    width={900}
-                    height={520}
-                    className="h-44 w-full object-cover object-top"
-                  />
-                </div>
-              ) : (
-                <div className="mt-6 rounded-2xl border border-[#ded4c3] bg-[#f7f4ef] p-4">
-                  <div className="mb-3 flex gap-2">
-                    <span className="h-3 w-3 rounded-full bg-[#d6cec0]" />
-                    <span className="h-3 w-3 rounded-full bg-[#d6cec0]" />
-                    <span className="h-3 w-3 rounded-full bg-[#d6cec0]" />
-                  </div>
+              <div className="mt-6 overflow-hidden rounded-2xl border border-[#ded4c3] bg-[#f7f4ef] shadow-sm">
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  width={1200}
+                  height={700}
+                  className="h-48 w-full object-cover object-top"
+                />
+              </div>
 
-                  <div className="space-y-3">
-                    <div className="h-4 w-2/3 rounded-full bg-[#1f6f8b]/30" />
-                    <div className="h-4 w-full rounded-full bg-[#d6cec0]" />
-                    <div className="h-4 w-5/6 rounded-full bg-[#d6cec0]" />
+              <p className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-[#8a949a]">
+                {project.caption}
+              </p>
 
-                    <div className="grid grid-cols-3 gap-2 pt-2">
-                      <div className="h-12 rounded-xl bg-white" />
-                      <div className="h-12 rounded-xl bg-white" />
-                      <div className="h-12 rounded-xl bg-white" />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <h3 className="mt-5 text-2xl font-bold">{project.title}</h3>
+              <h3 className="mt-4 text-2xl font-bold">{project.title}</h3>
               <p className="mt-4 leading-7 text-[#5f6b70]">{project.text}</p>
 
-              {project.title === "Veris" && (
-                <div className="mt-4 rounded-xl bg-green-50 p-4">
-                  <div className="font-semibold text-green-700">
-                    Current Status: Live Demonstration
-                  </div>
-                  <div className="mt-2 text-sm text-green-700">
-                    Manufacturing • Education • Government
-                  </div>
+              <div
+                className={`mt-5 rounded-xl p-4 ${
+                  project.tone === "green" ? "bg-green-50" : "bg-blue-50"
+                }`}
+              >
+                <div
+                  className={`font-semibold ${
+                    project.tone === "green"
+                      ? "text-green-700"
+                      : "text-blue-700"
+                  }`}
+                >
+                  {project.statusTitle}
                 </div>
-              )}
-
-              {project.title === "Certus" && (
-                <div className="mt-4 rounded-xl bg-blue-50 p-4">
-                  <div className="font-semibold text-blue-700">
-                    Current Status: Active Development
-                  </div>
-                  <div className="mt-2 text-sm text-blue-700">
-                    Scholarships • Grants • Funding Navigation
-                  </div>
+                <div
+                  className={`mt-2 text-sm ${
+                    project.tone === "green"
+                      ? "text-green-700"
+                      : "text-blue-700"
+                  }`}
+                >
+                  {project.statusDetail}
                 </div>
-              )}
+              </div>
 
               <div className="mt-6 grid gap-2">
                 {project.items.map((item) => (
@@ -404,6 +410,26 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-[#ded4c3] bg-white p-6 shadow-sm md:flex md:items-center md:justify-between md:gap-6">
+          <div>
+            <div className="flex items-center gap-3">
+              <h3 className="text-xl font-bold">Certus</h3>
+              <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                IN DEVELOPMENT
+              </span>
+            </div>
+            <p className="mt-2 max-w-3xl leading-7 text-[#5f6b70]">
+              Also in the works: a grant and funding navigation platform that
+              helps students and organizations discover opportunities, evaluate
+              eligibility, track deadlines, and plan applications.
+            </p>
+          </div>
+
+          <div className="mt-4 shrink-0 text-sm font-medium text-[#3f4a4f] md:mt-0">
+            Scholarships • Grants • Funding Navigation
+          </div>
         </div>
       </section>
 

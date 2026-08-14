@@ -23,12 +23,13 @@ const colorThemeOptions = [
 ];
 
 const layoutOptions = [
-  { value: "split_screen", label: "Split", shape: "split" },
-  { value: "featured_media", label: "Featured", shape: "featured" },
+  { value: "split_screen", label: "Split Screen", shape: "split" },
+  { value: "featured_media", label: "Featured Media", shape: "featured" },
+  { value: "full_width_overlay", label: "Full Width Hero", shape: "showcase" },
   { value: "asymmetrical", label: "Asymmetrical", shape: "asymmetrical" },
   { value: "centered", label: "Centered", shape: "centered" },
   { value: "showcase", label: "Showcase", shape: "showcase" },
-  { value: "card_block", label: "Cards", shape: "cards" },
+  { value: "card_block", label: "Card / Block", shape: "cards" },
   { value: "masonry", label: "Masonry", shape: "masonry" },
   { value: "magazine", label: "Magazine", shape: "magazine" },
 ];
