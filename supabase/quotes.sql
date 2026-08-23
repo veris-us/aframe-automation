@@ -59,6 +59,24 @@ create trigger quotes_set_updated_at
   for each row execute function public.set_updated_at();
 
 -- ---------------------------------------------------------------------------
+-- Grants
+--
+-- RLS filters rows *within* privileges you've already granted — it does not
+-- grant them. Without this block every query fails with
+-- "permission denied for table quotes", even for the owner.
+--
+-- The sequence grant is required too: quote_number defaults to nextval(), and
+-- that default runs as the inserting role, not the table owner. Miss it and
+-- reads work but every insert fails with "permission denied for sequence".
+-- ---------------------------------------------------------------------------
+
+grant usage on schema public to authenticated;
+
+grant select, insert, update, delete on public.quotes to authenticated;
+
+grant usage, select on sequence public.quote_number_seq to authenticated;
+
+-- ---------------------------------------------------------------------------
 -- Row Level Security
 --
 -- This is the actual lock on the data. The browser holds a public anon key, so
